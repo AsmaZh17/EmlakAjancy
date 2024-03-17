@@ -1,0 +1,43 @@
+<nav class="top-header-area navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center w-100 py-2">
+        <div class="col-auto">
+          <div>
+            <img style="width: 170px; height: 80px;" src="../../../assets/img/emlak-bg.png" alt="logo">
+          </div>
+        </div> 
+        <div class="col-auto">
+            <div class="btn-group">
+              <ul class="navbar-nav gap-5 pe-3"> 
+                <li class="nav-item">
+                  <a class="nav-link color size" routerLink="homeadm" style="color: #9d4a2f;">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle size" >List Produit</a>
+                  <ul class="dropdown-menu"> 
+                    <li  *ngFor="let categorie of categories">
+                      <a class="dropdown-item" [routerLink]="'liste/'+ categorie ">{{ categorie }}</a>
+                    </li>
+                    <li *ngIf="user != [] " ><a class="dropdown-item" routerLink="liste/User">User</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" *ngIf="model && model.length > 0">
+                  <a class="nav-link px-3 size" routerLink="liste/Model" >Model</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-3 size" routerLink="gestion/ajouter" >Ajouter </a>
+                </li>
+                <div style="display: flex;">
+                  <a routerLink="../home" class="mx-3">
+                    <i class="fas fa-home" style="padding-top: 15px; color: #9d4a2f;"></i>
+                  </a>
+                  <a routerLink="gestion/ajouterAdmin" class="mx-3">
+                    <i class="fas fa-user" style="padding-top: 15px; color: #9d4a2f;"></i>
+                  </a>
+                </div>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </nav>

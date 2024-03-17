@@ -1,0 +1,45 @@
+h1{
+	color: #9d4a2f;
+	font-size: 3.5rem;
+	font-weight: 600;
+  padding-left: 120px; 
+  margin-top: 130px;
+}
+.image {
+  background-color: #FFF8DC;
+  border-radius: 25px;
+  height: 450px;
+  max-height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center; 
+}
+table .main{
+	border-bottom: 2px solid #D2B48C;
+}
+table {
+    margin-top: 30px;
+    margin-left: 100px;
+    width: 90%;
+    border-collapse: collapse;
+  }
+table td table {
+  margin-left: 30px;
+  margin-top: -20px;
+}
+  tbody td:nth-child(1) {
+    width: 50%;
+  }
+  
+  tbody td:nth-child(2) {
+    width: 50%;
+  }
+  td {
+    padding: 5px;
+  }
+  iframe {
+    background-color: #FFF8DC;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+}

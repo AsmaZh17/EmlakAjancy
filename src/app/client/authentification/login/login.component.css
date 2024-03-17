@@ -1,0 +1,139 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.all{
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 8%;
+}
+.container{
+	width: 100%;
+	max-width: 470px;
+	padding: 30px 20px 10px;
+	border: 2px solid #D2B48C;
+	border-radius: 16px;
+}
+.container h1{
+	text-align: center;
+	color: #9d4a2f;
+	font-size: 2.5rem;
+	font-weight: 600;
+	padding: 0 0 8px 0;
+}
+.container section{
+	padding: 0 50px;
+} 
+section .main{
+	position: relative;
+	margin: 20px 0;
+	border-bottom: 2px solid #D2B48C;
+;
+}
+.main input{
+	width: 100%;
+	padding: 0 5px;
+	font-size: 1rem;
+	height: 40px;
+	border: none;
+	outline: none;
+	background: none;
+	color: black;
+}
+.main label{
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	color: #D2B48C;
+;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+	pointer-events: none;
+	transition: all .40s ease;
+}
+.main span::before{
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 35px;
+	width: 100%;
+	height: 2px;
+}
+.main input:focus ~ label,
+.main input:valid ~ label{
+	top: -3px;
+	color: #9d4a2f;
+}
+.pass{
+	margin: -6px 0 20px 5px;
+	color: #9d4a2f;
+	cursor: pointer;
+}
+.pass:hover{
+	text-decoration: underline;
+}
+input[type="submit"]{
+	height: 45px;
+	width: 100%;
+	padding: 0;
+	border: none;
+	background: #D2B48C;
+	color: #fff;
+	font-size: 1.1rem;
+	border-radius: 16px;
+	cursor: pointer;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: -20px;
+}
+.signup{
+	color: #D2B48C;
+;
+	font-size: 1rem;
+	text-align: center;
+	margin: 30px 0;
+	cursor: pointer;
+}
+.signup a{
+	margin-left: 10px;
+	text-decoration: none;
+}
+.signup a:hover{
+	text-decoration: underline;
+}
+input[type="button"]{
+	color: #9d4a2f;
+    text-decoration: none;
+    font-size: 15px;
+    background: none;
+    border: none;
+}
+a:hover {
+	color: #D2B48C;
+    text-decoration: none;
+}
+small {
+	position: relative;
+	top: -20px;
+	color: #D2B48C;
+}
+small div {
+	margin-bottom: -20px;
+}
+button {
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}  
+img {
+	width: 20px;
+}

@@ -1,0 +1,172 @@
+<div class="all">
+    <div class="container"> 
+        <section>
+        <h1>Modifier:</h1> 
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="nomProjet" >
+                    <span></span>
+                    <label>NomProjet</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="adresse" >
+                    <span></span>
+                    <label>Adresse</label>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="localisation" >
+                    <span></span>
+                    <label>Localiation</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="surface" >
+                    <span></span>
+                    <label>Surface</label>
+                </div>
+            </div>
+            <div style="margin-bottom: -25px; margin-top: -10px;">
+                <div class="autre">
+                    <label class="file">Image</label> 
+                    <div class="custom-file-upload">
+                        <label for="file-upload" class="custom-file-label">Choisir un fichier</label>
+                        <input type="file" id="file-upload" class="input-file" multiple (change)="selectImage($event)">
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="main3">
+                        <input type="text"  formControlName="prix" >
+                        <span></span>
+                        <label>Prix</label>
+                    </div>
+                </div>
+            </div> 
+            <div style="margin-bottom: -50px; margin-top: -30px;">
+                <div class="radio1">
+                    <label >Etat</label><br>
+                    <input type="radio" formControlName="etat" name="etat" value="Vente"> Vente
+                    <input type="radio" formControlName="etat" name="etat" value="Location"> Location
+                </div>  
+                <div class="radio2">
+                    <label >Libre</label><br>
+                    <input type="radio" formControlName="libre" name="libre" [value]="true" [checked]="editForm.get('libre')?.value === true">Oui
+                    <input type="radio" formControlName="libre" name="libre" [value]="false" [checked]="editForm.get('libre')?.value ===false">Non
+                </div>
+                <div class="main">
+                    <div class="main5">
+                        <input type="text"  formControlName="anneeConstruction"> 
+                        <span></span>
+                        <label>Construction</label>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main4">
+                    <input type="text"  formControlName="description" >
+                    <span></span>
+                    <label>Description</label>
+                </div>
+            </div>
+            <div class="radio">
+                <label >Categorie</label>
+                <br>
+                <input type="radio" formControlName="categorie" name="categorie" value="Appartement">Appartement
+                <input type="radio" formControlName="categorie" name="categorie" value="Villa"> Villa
+                <input type="radio" formControlName="categorie" name="categorie" value="Maison"> Maison
+                <input type="radio" formControlName="categorie" name="categorie" value="Parking"> Parking
+                <input type="radio" formControlName="categorie" name="categorie" value="Ferme"> Ferme
+                <input type="radio" formControlName="categorie" name="categorie" value="Terrain"> Terrain
+
+                <span></span>
+            </div>
+            <div *ngIf="editForm.value.categorie === 'Appartement'">
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="nombreChambres" >
+                        <span></span>
+                        <label>NombreChambres</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="etage" >
+                        <span></span>
+                        <label>Etage</label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="editForm.value.categorie === 'Villa'">
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="nombreChambres" >
+                        <span></span>
+                        <label>nombreChambres</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="surfaceJardin" >
+                        <span></span>
+                        <label>SurfaceJardin</label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="editForm.value.categorie === 'Maison'">
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="nombrePieces" >
+                        <span></span>
+                        <label>NombrePieces</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="jardin" >
+                        <span></span>
+                        <label>Jardin</label>
+                    </div>
+                </div>
+                <div *ngIf="editForm.value.categorie === 'Parking'">
+            </div>
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="nombrePlaces" >
+                        <span></span>
+                        <label>NombrePlaces</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="couvert" >
+                        <span></span>
+                        <label>Couvert</label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="editForm.value.categorie === 'Ferme'">
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="nombreAnimaux" >
+                        <span></span>
+                        <label>NombreAnimaux</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="typeCulture" >
+                        <span></span>
+                        <label>TypeCulture</label>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="editForm.value.categorie === 'Terrain'">
+                <div class="main">
+                    <div class="main1">
+                        <input type="text"  formControlName="typeTerrain" >
+                        <span></span>
+                        <label>TypeTerrain</label>
+                    </div>
+                    <div class="main2">
+                        <input type="text"  formControlName="constructible" >
+                        <span></span>
+                        <label>Constructible</label>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Envoyer">
+        </form>
+        </section>
+    </div>
+</div>

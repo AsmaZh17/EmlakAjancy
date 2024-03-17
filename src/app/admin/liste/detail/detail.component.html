@@ -1,0 +1,111 @@
+<h1>Detail:</h1>
+<table>
+    <tr>
+        <td style="width: 50%;">
+            <div class="mb-3 image" [style.background-image]="typologie?.urlimage ? 'url(' + typologie.urlimage[currentImageIndex] + ')' : 'none'"
+            (click)="changeImage()">
+            </div>
+        </td>
+        <td>
+            <table>
+                <tbody>
+                    <tr class="main">
+                        <th>nomProjet</th>
+                        <td scope='col'>{{ typologie?.nomProjet }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>Adresse</th>
+                        <td scope='col'>{{ typologie?.adresse }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>Categorie</th>
+                        <td scope='col'>{{ typologie?.categorie }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>Etat</th>
+                        <td scope='col'>{{ typologie?.etat }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>prix</th>
+                        <td scope='col'>{{ typologie?.prix }} TND</td>
+                    </tr>
+                    <tr class="main">
+                        <th>surface</th>
+                        <td scope='col'>{{ typologie?.surface }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>libre</th>
+                        <td scope='col'>{{ typologie?.libre }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>AnneeConstruction</th>
+                        <td scope='col'>{{ typologie?.anneeConstruction }}</td>
+                    </tr>
+                    <tr class="main"*ngIf="typologie?.categorie === 'Appartement' || typologie?.categorie === 'modelAppartement'">
+                        <th>NombreChambres</th>
+                        <td scope='col'>{{ typologie?.nombreChambres }}</td>
+                    </tr>
+                    <tr class="main"*ngIf="typologie?.categorie === 'Appartement' || typologie?.categorie === 'modelAppartement'">
+                        <th>Etage</th>
+                        <td scope='col'>{{ typologie?.etage }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Villa' || typologie?.categorie === 'modelVilla'">
+                        <th>NombreChambres</th>
+                        <td scope='col'>{{ typologie?.nombreChambres }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Villa' || typologie?.categorie === 'modelVilla'">
+                        <th>SurfaceJardin</th>
+                        <td scope='col'>{{ typologie?.surfaceJardin }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Ferme' || typologie?.categorie === 'modelFerme'">
+                        <th>NombreAnimaux</th>
+                        <td scope='col'>{{ typologie?.nombreAnimaux }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Ferme' || typologie?.categorie === 'modelFerme'">
+                        <th>TypeCulture</th>
+                        <td scope='col'>{{ typologie?.typeCulture }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Maison' || typologie?.categorie === 'modelMaison'">
+                        <th>NombrePieces</th>
+                        <td scope='col'>{{ typologie?.nombrePieces }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Maison' || typologie?.categorie === 'modelMaison'">
+                        <th>Jardin</th>
+                        <td scope='col'>{{ typologie?.jardin }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Parking' || typologie?.categorie === 'modelParking'">
+                        <th>NombrePlaces</th>
+                        <td scope='col'>{{ typologie?.nombrePlaces }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Parking' || typologie?.categorie === 'modelParking'">
+                        <th>Couvert</th>
+                        <td scope='col'>{{ typologie?.couvert }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Terrain' || typologie?.categorie === 'modelTerrain'">
+                        <th>TypeTerrain</th>
+                        <td scope='col'>{{ typologie?.typeTerrain }}</td>
+                    </tr>
+                    <tr class="main" *ngIf="typologie?.categorie === 'Terrain' || typologie?.categorie === 'modelTerrain'">
+                        <th>Constructible</th>
+                        <td scope='col'>{{ typologie?.constructible }}</td>
+                    </tr>
+                    <tr class="main">
+                        <th>Description</th>
+                        <td scope='col'>{{ typologie?.description }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td style="width: 50%;">
+            <div class="mb-3">
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe [src]="sanitizeUrl(typologie?.localisation)" class="embed-responsive-item"></iframe>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

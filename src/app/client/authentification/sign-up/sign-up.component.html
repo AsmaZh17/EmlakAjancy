@@ -1,0 +1,60 @@
+<div class="all">
+    <div class="container">
+        <section>
+        <h1>Sign Up</h1>
+        <form [formGroup]="productAddForm" (ngSubmit)="navigateToBienvenue()">
+            <div class="main" >
+                <input type="text" formControlName="nom" >
+                <span></span>
+                <label>Nom</label>
+            </div>
+            <small *ngIf="nom.invalid && (nom.dirty || nom.touched)">
+                <div *ngIf="nom.errors?.['required']">Nom is required</div>
+            </small>
+            <div class="main" >
+                <input type="text" formControlName="prenom" >
+                <span></span>
+                <label>Prenom</label>
+            </div>
+            <small *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)">
+                <div *ngIf="prenom.errors?.['required']">Prenom is required</div>
+            </small>
+            <div class="main">
+                <input type="text" formControlName="email" >
+                <span></span>
+                <label>Email</label>
+            </div>
+            <small *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors?.['required']">Email is required</div>
+            </small>
+            <div class="main" >
+                <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password">
+                <button type="button" (click)="togglePasswordVisibility()">
+                    <img *ngIf="passwordVisible" src="../../../../assets/img/view.png">
+                    <img *ngIf="!passwordVisible" src="../../../../assets/img/hide.png">
+                </button>
+                <span></span>
+                <label >Password</label>
+            </div>
+            <small *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.errors?.['required']">Password is required</div>
+            </small> 
+            <div class="main">
+                <input [type]="confirmpasswordVisible ? 'text' : 'password'" formControlName="confirmpassword">
+                <button type="button" (click)="toggleConfirmPasswordVisibility()">
+                    <img *ngIf="confirmpasswordVisible" src="../../../../assets/img/view.png">
+                    <img *ngIf="!confirmpasswordVisible" src="../../../../assets/img/hide.png">
+                </button>
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+                <div *ngIf="confirmPassword.errors?.['required']">Confirm Password is required</div>
+            </small>
+            <input type="submit" value="Login">
+            <div class="signup" style="text-align: left;">
+                Already have an account?? <input type="button" (click)="navigateToLogin()" value="Login here">
+            </div>
+        </form>
+        </section>
+    </div></div>

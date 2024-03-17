@@ -1,0 +1,79 @@
+<div class="all">
+    <div class="container">
+        <section>  
+            <h1>Crée un Proprietaire:</h1>
+            <form [formGroup]="productAddForm" (ngSubmit)="navigateToBienvenue()">
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="nom" > 
+                    <span></span>
+                    <label>Nom</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="prenom" >
+                    <span></span>
+                    <label>Prenom</label>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="adresse" >
+                    <span></span>
+                    <label>Adresse</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="email" >
+                    <span></span>
+                    <label>Email</label>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="instagram" >
+                    <span></span>
+                    <label>Instagram</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="facebook" >
+                    <span></span>
+                    <label>Facebook</label>
+                </div>
+            </div>
+            <div class="main">
+                <div class="main1">
+                    <input type="text"  formControlName="telephone" >
+                    <span></span>
+                    <label>Telephone</label>
+                </div>
+                <div class="main2">
+                    <input type="text"  formControlName="whatsapp" >
+                    <span></span>
+                    <label>Whatsapp</label>
+                </div>
+            </div>
+            <div class="main" > 
+                <div class="main1" style="display: flex;">
+                    <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password">
+                    <button type="button" (click)="togglePasswordVisibility()">
+                        <img *ngIf="passwordVisible" src="../../../../assets/img/view.png">
+                        <img *ngIf="!passwordVisible" src="../../../../assets/img/hide.png">
+                    </button>
+                    <span></span>
+                    <label >Password</label>
+                </div>
+                <div class="main2" style="display: flex;">
+                    <input [type]="confirmpasswordVisible ? 'text' : 'password'" formControlName="confirmpassword">
+                    <button type="button" (click)="toggleConfirmPasswordVisibility()">
+                        <img *ngIf="confirmpasswordVisible" src="../../../../assets/img/view.png">
+                        <img *ngIf="!confirmpasswordVisible" src="../../../../assets/img/hide.png">
+                    </button>
+                    <span></span>
+                    <label>Confirm Password</label>
+                </div>
+            </div>
+            
+            <input type="submit" value="Envoyer">
+        </form>
+        </section>
+    </div>
+</div>

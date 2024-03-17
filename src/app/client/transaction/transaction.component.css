@@ -1,0 +1,158 @@
+.img {
+    width: 10px;
+    height: 230px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    border-radius: 50px;
+}
+.img2 {
+  width: 10px;
+  height: 300px;
+  margin-top: 70px;
+  margin-bottom: 80px;
+  border-radius: 50px;
+}
+input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: 2px solid #9d4a2f;	
+	cursor: pointer;
+    margin-right: 3px;
+}
+input[type="radio"]:checked {
+    background-color: #9d4a2f; 
+    padding: 2px;
+}
+.contact-form1 label {
+    font-size: 20px;
+    margin-right: 10px;
+}
+i {
+    font-size: 40px;
+    color: #9d4a2f;
+}
+input[type="submit"] {
+    background-color: #9d4a2f;
+    color: #fff;
+    padding: 5px 40px;
+    font-size: 15px;
+}
+.dropdown {
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  position: relative;
+}
+.input-box{
+  position: absolute;
+    width: 333px;
+    height: 45px;
+    box-sizing: border-box;
+    outline: 1px solid #9d4a2f;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;   
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+  .input-box::before {
+    content: url("../../../assets/img/chevron-en-bas.png");
+    height: 50px;
+    position: absolute;
+    font-size: 18px;
+    top: 55%;
+    right: 15px;
+    transform: translate(0 , -50%);
+    width: fit-content;
+    height: fit-content;
+  }
+  .input-box.open::before {
+    content: url("../../../assets/img/chevron-en-haut.png");
+  }  
+  .input-box:empty::after {
+    content: 'Typologie';
+    color: #9d4a2f;
+  }
+  
+  .list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 48%;
+    height: fit-content;
+    background-color: #FFF8DC;
+    margin-top: 10px;
+    border-radius: 2mm;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-height: 0;
+    transition: 0.25s ease-out;
+  }
+  .list input {
+    display: none;
+  }
+  .list label {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: poppins;
+    font-size: 14px;
+    padding: 0px 15px;
+    box-sizing: border-box; 
+    position: relative;
+  }
+  input:checked + label {
+    color: #9d4a2f;
+  }
+  input:checked + label::before {
+    content: url("../../../assets/img/verifie.png");
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0,-50%);
+    font-size: 18px;
+  }
+.pers {
+  position: absolute;
+  top: 161px;
+  left: 370px;
+}
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+  margin-left: 20px;
+  width: 48.5%;
+  border: 1px solid #9d4a2f;
+  border-radius: 8px;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.file-input-container input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-container label {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: #9d4a2f;
+  cursor: pointer;
+  font-size: 15px;
+}

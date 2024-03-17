@@ -1,0 +1,57 @@
+<div class="top-header-area">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+ 
+        <div class="offcanvas offcanvas-end">
+          <div class="offcanvas-body">
+            <ul class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link me-4" routerLink="/ /about" style="color: #000;">À Propos</a>
+              </li>
+              <li class="nav-item"><!-- me-4 dropdown-->
+                <a class="nav-link me-4" routerLink="/ /shop" style="color: #000;">Propriétés</a><!--dropdown-toggle-->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" [routerLink]="'/ /transaction/' + id" style="color: #000;">Transaction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" routerLink="/ /contact" style="color: #000;">Contact</a>
+              </li>
+              <li class="nav-item">
+                <div class="user-items ps-5">
+                  <ul class="d-flex justify-content-end list-unstyled">
+                    <li class="search-item pe-3" >
+                      <a (click)="goToShop(true)"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li class="pe-3" *ngIf="!isAuthenticated">
+                      <a routerLink="../authentification/login"><i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                    <li class="pe-3" *ngIf="isAuthenticated">
+                      <a routerLink="../authentification/deconnecter"><i class="fas fa-power-off"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+<div class="hero-area hero-bg" [style.background-image]="'url( ../../../assets/img/maison.jpg)'">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-0 ">
+                <div class="hero-text"> 
+                    <div class="hero-text-tablecell">
+                        <div class="margin"><h1>Votre future<br> maison est juste ici</h1></div>
+                        <div class="hero-btns margin2">
+                            <a routerLink="../ /shop" class="boxed-btn">Nos Résidences</a>
+                            <a routerLink="../ /contact" class="bordered-btn">Contactez-nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+package Residence.spring.Controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import Residence.spring.entities.*;
+import Residence.spring.Service.ResidenceService;
+
+@CrossOrigin(origins = "*")
+@RestController
+public class ResidenceController {
+
+	@Autowired
+	private ResidenceService Service;
+	@GetMapping("/caract/{id}")
+	public Caracteristique getCaracteristique(@PathVariable int id) {
+		return this.Service.getCaracteristique(id);
+	}
+	@PostMapping("/caract")
+	public void addCaracteristique(@RequestBody Caracteristique c) {
+		this.Service.addCaracteristique(c);
+	}
+	@GetMapping("/avantages")
+	public ArrayList<AvantagesImmobilier> getAvantages() {
+		return this.Service.getAvantages();
+	}
+	@PostMapping("/avantages")
+	public void addAvantage(@RequestBody AvantagesImmobilier a) {
+		this.Service.addAvantage(a);
+	}
+	@GetMapping("/all")
+	public ArrayList<Typologie> getAlls() {
+		return this.Service.getAll();
+	}
+	@GetMapping("/all/{id}")
+	public Typologie getAll(@PathVariable int id) {
+		return this.Service.get(id);
+	}
+	@PostMapping("/appartement")
+	public void addAppartement(@RequestBody Appartement a) {
+		this.Service.addAppartement(a);
+	}
+	@PostMapping("/villa")
+	public void addVilla(@RequestBody Villa villa) {
+		this.Service.addVilla(villa);
+	}
+	@PostMapping("/ferme")
+	public void addFerme(@RequestBody Ferme ferme) {
+		this.Service.addFerme(ferme);
+	}
+	@PostMapping("/maison")
+	public void addMaison(@RequestBody Maison maison) {
+		this.Service.addMaison(maison);
+	}
+	@PostMapping("/parking")
+	public void addParking(@RequestBody Parking parking) {
+		this.Service.addParking(parking);
+	}
+	@PostMapping("/terrain")
+	public void addTerrain(@RequestBody Terrain terrain) {
+		this.Service.addTerrain(terrain);
+	}
+	@GetMapping("/appartement")
+	public ArrayList<Appartement> getAppartements() {
+		return this.Service.getAppartement();
+	}
+	@GetMapping("/villa")
+	public ArrayList<Villa> getVillas() {
+		return this.Service.getVilla();
+	}
+	@GetMapping("/ferme")
+	public ArrayList<Ferme> getFermes() {
+		return this.Service.getFerme();
+	}
+	@GetMapping("/maison")
+	public ArrayList<Maison> getMaisons() {
+		return this.Service.getMaison();
+	}
+	@GetMapping("/parking")
+	public ArrayList<Parking> getParkings() {
+		return this.Service.getParking();
+	}
+	@GetMapping("/terrain")
+	public ArrayList<Terrain> getTerrains() {
+		return this.Service.getTerrain();
+	}
+	@GetMapping("/appartement/{id}")
+	public Appartement getAppartement(@PathVariable int id) {
+		return (Appartement) this.Service.get(id);
+	}
+	@GetMapping("/villa/{id}")
+	public Villa getVilla(@PathVariable int id) {
+		return (Villa) this.Service.get(id);
+	}
+	@GetMapping("/ferme/{id}")
+	public Ferme getFerme(@PathVariable int id) {
+		return (Ferme) this.Service.get(id);
+	}
+	@GetMapping("/maison/{id}")
+	public Maison getMaison(@PathVariable int id) {
+		return (Maison) this.Service.get(id);
+	}
+	@GetMapping("/parking/{id}")
+	public Parking getParking(@PathVariable int id) {
+		return (Parking) this.Service.get(id);
+	}
+	@GetMapping("/terrain/{id}")
+	public Terrain getTerrain(@PathVariable int id) {
+		return (Terrain) this.Service.get(id);
+	}
+	@DeleteMapping("/appartement/{id}")
+	public void deleteAppartements(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/villa/{id}")
+	public void deleteVilla(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/ferme/{id}")
+	public void deleteFerme(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/maison/{id}")
+	public void deleteMaison(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/parking/{id}")
+	public void deleteParking(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/terrain/{id}")
+	public void deleteTerrain(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+
+	/*
+	@GetMapping("/maison/{id}")
+	public Residence getMaison(@PathVariable int id) {
+		return this.Service.getMaison(id);
+	}
+	
+	@PostMapping("/maisons")
+	public void addMaison(@RequestBody Residence maison) {
+		this.Service.addMaison(maison);
+	}
+	@PutMapping("/maison/{id}")
+	public void updateMaison(@RequestBody Residence maison ,@PathVariable int id) {
+		this.Service.updateMaison(maison,id);
+	}
+	*/
+}
+
+

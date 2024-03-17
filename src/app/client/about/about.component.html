@@ -1,0 +1,71 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center"> 
+                <div class="breadcrumb-text">
+                    <p>Votre partenaire immobilier de confiance</p>
+                    <h1>À Propos</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- featured section -->
+<div class="feature-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="featured-text">
+                    <h2 class="pb-3">Why <span class="marron-text">EMLAK ajancy</span></h2>
+                    <div class="row">
+                        <div *ngFor="let w of why" class="col-lg-6 col-md-6 mb-4 mb-md-5">
+                            <div class="list-box d-flex">
+                                <div class="list-icon">
+                                    <i [class]="'fas ' + w.icon"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>{{w.nom}}</h3>
+                                    <p>{{w.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="feature-bg2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="featured-text2">
+                    <div>
+                        <h2 class="pb-3">Notre <span class="marron-text">Engagement</span></h2>
+                    </div>
+                    <p>
+                        Forte de nombreuses années d'expérience dans le domaine immobilier, notre agence s'engage à vous offrir des services
+                        exceptionnels pour répondre à tous vos besoins immobiliers. Que vous soyez à la recherche de la maison de vos rêves,
+                        d'un investissement lucratif, ou que vous souhaitiez vendre votre propriété, notre équipe dévouée est là pour vous
+                        guider à chaque étape du processus.
+                    </p>
+                    <p>
+                        Nous sommes fiers de notre connaissance approfondie du marché local, de notre transparence dans toutes les transactions,
+                        et de notre engagement envers la satisfaction de nos clients. Chez nous, chaque client est unique, et nous nous efforçons
+                        de fournir des solutions sur mesure qui répondent à vos besoins spécifiques.
+                    </p>
+                    <p>
+                        Notre passion pour l'immobilier, associée à notre professionnalisme et notre intégrité, font de nous le partenaire idéal
+                        pour concrétiser vos projets immobiliers. Faites confiance à notre agence pour vous accompagner dans l'atteinte de vos
+                        objectifs immobiliers, avec dévouement, expertise et excellence.
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<!-- end featured section -->
+<div><br></div>

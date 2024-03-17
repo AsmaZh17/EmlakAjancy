@@ -1,0 +1,48 @@
+<div class="top-header-area" [ngClass]="{ 'scrolled': scrolled }">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand notscrol">
+        <img *ngIf="!scrolled" src="assets/img/emlak-bg2.png" class="logo">
+      </a>
+      <a class="navbar-brand scrol">
+        <img *ngIf="scrolled" src="assets/img/emlak-bg.png" class="logo">
+      </a> 
+      <div class="offcanvas offcanvas-end">
+        <div class="offcanvas-body" [style.color]="scrolled ? '#9d4a2f' : 'white'">
+          <ul class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link me-4" routerLink="../home" [style.color]="scrolled ? '#9d4a2f' : 'white'">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" routerLink="about" [style.color]="scrolled ? '#9d4a2f' : 'white'">À Propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" routerLink="shop" [style.color]="scrolled ? '#9d4a2f' : 'white'">Propriétés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" [routerLink]="'transaction/' + id" [style.color]="scrolled ? '#9d4a2f' : 'white'">Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" routerLink="contact" [style.color]="scrolled ? '#9d4a2f' : 'white'">Contact</a>
+            </li>
+            <li class="nav-item">
+              <div class="user-items ps-5">
+                <ul class="d-flex justify-content-end list-unstyled">
+                  <li class="pe-3" >
+                      <a [style.color]="scrolled ? '#9d4a2f' : 'white'" (click)="goToShop(true)"><i class="fas fa-search" ></i></a>
+                  </li>
+                  <li class="pe-3" *ngIf="!isAuthenticated">
+                    <a [style.color]="scrolled ? '#9d4a2f' : 'white'"  routerLink="../authentification/login"><i class="fas fa-sign-in-alt"></i></a>
+                  </li>
+                  <li class="pe-3" *ngIf="isAuthenticated">
+                    <a [style.color]="scrolled ? '#9d4a2f' : 'white'"  routerLink="../authentification/deconnecter"><i class="fas fa-power-off"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,37 @@
+<h1>Ferme:</h1>
+<div class="all">
+    <table class='table table-striped'>
+      <thead *ngIf="Ferme != undefined">
+        <tr class="main">
+          <th *ngFor="let h of thead" scope='col' class="text-center">{{h}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of Ferme" class="main text-center">
+          <td scope='col'>{{ product.id }}</td>
+          <td scope='col'>{{ product.nomProjet }}</td>
+          <td scope='col'>{{ product.prix }} TND</td>
+          <td scope='col'>{{ product.surface }} m<sup>2</sup></td>
+          <td scope='col'>{{ product.urlimage }}</td>
+          <td scope='col'>
+            <input type="button" (click)="toggleHidden(product.id)" value="Hidden" 
+            [class.hidden-button]="product.hidden" 
+            [class.not-hidden-button]="!product.hidden">
+          </td>
+          <td>
+            <div style="display: flex; color: #9d4a2f; position: relative; top: 10px;">
+              <a [routerLink]="['../Detail' , product.categorie ,product.id]" class="mx-3">
+                <i class="fas fa-info-circle"></i>
+              </a>
+              <a [routerLink]="['../../../admin/gestion/modifier' , product.categorie, product.id]" routerLinkActive="active" class="mx-3">
+                <i class="fas fa-edit"></i> 
+              </a>
+              <a (click)="deleteFerme(product.id)" class="mx-3"> 
+                <i class="fas fa-trash"></i>
+              </a>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

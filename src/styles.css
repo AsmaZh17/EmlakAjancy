@@ -1,0 +1,4 @@
+body{
+      --bs-body-font-family: 'Prata', serif;
+      background: linear-gradient(to right, #F5DEB3, #FFF8DC, #F5DEB3);
+}

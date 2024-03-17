@@ -1,0 +1,33 @@
+<div class="all">
+<div class="container">
+    <section>
+    <h1>Login</h1>
+    <form [formGroup]="myForm" (ngSubmit)="navigateToHome()">
+        <div class="main">
+            <input type="text" name="" formControlName="email">
+            <span></span>
+            <label>Email</label>
+        </div>
+        <small *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']">User Name is required</div>
+        </small>
+        <div class="main"> 
+            <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password">
+            <button type="button" (click)="togglePasswordVisibility()">
+                <img *ngIf="passwordVisible" src="../../../../assets/img/view.png">
+                <img *ngIf="!passwordVisible" src="../../../../assets/img/hide.png">
+            </button>
+            <span></span>
+            <label>Password</label>
+        </div>
+        <small *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+        </small>
+        <input type="submit" value="Login">
+        <div class="signup" style="text-align: left;">
+            Not a member?? <input type="button" (click)="navigateToSignUp()" value="Sign Up here">
+        </div>
+    </form>
+    </section>
+</div>
+</div>

@@ -1,0 +1,24 @@
+<h1>Model:</h1>
+<div class="all">
+    <table class='table table-striped'>
+      <thead *ngIf="Model != undefined">
+        <tr class="main">
+          <th *ngFor="let h of thead" scope='col' class="text-center">{{h}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of Model; let i = index" class="main text-center">
+          <td scope='col'>{{ product.categorie }}</td>
+          <td scope='col'>{{ product.nomProjet }}</td>
+          <td scope='col'>{{ product.etat }}</td>
+          <td scope='col'>{{ product.prix }} TND</td>
+          <td scope='col'>{{ product.surface }} m<sup>2</sup></td>
+          <td scope='col'>
+            <input type="button" value="Detail"  [routerLink]="['../Detail' , product.categorie ,product.id]" class="not-hidden-button">
+            <input type="button" value="Ajouter" (click)="Ajouter(product.id,i)" class="not-hidden-button">
+            <input type="button" value="Supprimer" (click)="delete(product.id)" class="not-hidden-button">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,123 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Découvrez nos biens immobiliers</p>
+                    <h1>Nos Propriétés</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+
+
+<!-- products -->
+<div class="product-section mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-filters">
+                    <ul>
+                        <li style="border: none;">
+                            <div class="center" >
+                                <div class="dropdown">
+                                    <div class="input-box"></div> 
+                                    <div class="list" ngDefaultControl [(ngModel)]="selectedFilter">
+                                        <input type="radio" name="drop1" class="radio" id="id11" (change)="onFilterChange('Ville')">
+                                        <label for="id11" >
+                                            <span class="name">Ville</span>
+                                        </label>
+                                        <input type="radio" name="drop1" class="radio"  id="id12" (change)="onFilterChange('Categorie')">
+                                        <label for="id12">
+                                            <span class="name">Categorie</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="border: none;">
+                            <div style="display: flex;">
+                            <ul *ngIf="selectedFilter === ''">
+                                <li [class.active]="!adresseFiltre">All</li>
+                            </ul>
+                            <div *ngIf="selectedFilter === 'Ville'">
+                                <ul (click)="CategorieFiltre = null">
+                                    <li (click)="adresseFiltre = null" [class.active]="!adresseFiltre">All</li>
+                                    <li *ngFor="let adresse of adresses" (click)="adresseFiltre = adresse" [class.active]="CategorieFiltre === adresse">
+                                      {{ adresse }}
+                                    </li>
+                                </ul>
+                            </div> 
+                            <div *ngIf="selectedFilter === 'Categorie'">
+                                <ul (click)="adresseFiltre = null">
+                                    <li (click)="CategorieFiltre = null" [class.active]="!CategorieFiltre">All</li>
+                                    <li *ngFor="let categorie of categories" (click)="CategorieFiltre = categorie" [class.active]="CategorieFiltre === categorie">
+                                      {{ categorie }}
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul>
+                                <li class="pe-3" style="border: none;">
+                                  <a (click)="toggleSearch()">
+                                    <i class="fas fa-search"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                        </div>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+        <div *ngIf="showSearch" class="text-center">
+            <div class="breadcrumb-text">
+                <div class="search-bar">
+                    <div class="search">
+                        <input type="text" placeholder="Keywords" [(ngModel)]="searchQuery" #searchInput>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="container"> 
+            <div class="row product-lists">
+                <div *ngFor="let p of getProduitsFiltres()" class="col-lg-4 col-md-6"> 
+                    <a style="color: black;" [routerLink]="['../shop', p.id]">
+                    <div class="produit-bg" [style.background-image]="'url(' + p.urlimage[0] + ')'">
+                        <div class="text">
+                            <input *ngIf="p.etat === 'Vente'" type="button" [value]="p.prix + ' DT'">
+                            <input *ngIf="p.etat === 'Location'" type="button" [value]="p.prix + ' DT / mois'">
+                            <h4>{{p.nomProjet}}</h4>
+                            <p class="product-price"><span>{{p.adresse}}</span></p><hr> 
+                            <span *ngIf="p?.categorie === 'Appartement' || p?.categorie === 'Villa' && p.nombreChambres != 0" class="between"><i class="fas fa-bed"></i>{{p.nombreChambres}} chambre</span>
+                            <span><i class="fas fa-ruler"></i>{{p.surface}} m<sup>2</sup></span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="pagination-wrap">
+                    <ul>
+                        <li><a href="#">Prev</a></li>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">Next</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</div> 
+<div>
+    <br>
+</div>
+<!-- end products -->

@@ -1,0 +1,14 @@
+.scrolled {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 90px;
+    background: linear-gradient(to right, #F5DEB3, #FFF8DC, #F5DEB3);
+  }
+.notscrol {
+    position: relative;
+    left: 20px;
+}
+.scrol {
+    margin-left: 5px;
+}

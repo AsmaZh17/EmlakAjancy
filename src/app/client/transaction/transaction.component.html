@@ -1,0 +1,132 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Consultez nos offres spéciales</p>
+                    <h1>Transactions Immobilières</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+<div class="contact-from-section mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="contact-form-wrap2">
+                <div class="col-lg-3 text-center" style="margin-top: 15px;">
+                    <p><i class="fa fa-pencil-alt"></i></p>
+                    <img class="img" *ngIf="Form.value.typologie == ''" src="../../../assets/img/ligne.png">
+                    <img class="img2" *ngIf="Form.value.typologie != ''" src="../../../assets/img/ligne.png">
+                    <p><i class="far fa-envelope"></i></p>
+                </div>
+                <div class="col-lg-8"> 
+                    <div class="contact-form1">
+                        <h5>Entrez l'adresse et les données de votre propriété</h5>
+                        <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                            <label><input type="radio" name="etat" formControlName="etat" value="Vente">Vente</label>
+                            <label><input type="radio" name="etat" formControlName="etat" value="Location">Location</label>
+                            <p class="maxi">
+                                <input type="text" placeholder="Adresse" name="adresse" formControlName="adresse">
+                                <input style="margin-left: 19px;" type="number" placeholder="Prix" name="prix" formControlName="prix">
+                                <input style="margin-left: 17px;" type="number" placeholder="Surface" name="surface" formControlName="surface">
+                            </p>
+                            <div class="center" >
+                                <div class="dropdown">
+                                    <div class="input-box"></div>
+                                    <div class="list">
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio" id="id11" value="Appartement">
+                                        <label for="id11">
+                                            <span class="name">Appartement</span>
+                                        </label>
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio"  id="id12" value="Villa">
+                                        <label for="id12">
+                                            <span class="name">Villa</span>
+                                        </label>
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio"  id="id13" value="Maison">
+                                        <label for="id13">
+                                            <span class="name">Maison</span>
+                                        </label>
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio"  id="id14" value="Parking">
+                                        <label for="id14">
+                                            <span class="name">Parking</span>
+                                        </label>
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio"  id="id15" value="Ferme">
+                                        <label for="id15">
+                                            <span class="name">Ferme</span>
+                                        </label>
+                                        <input type="radio" name="typologie" formControlName="typologie" class="radio"  id="id16" value="Terrain">
+                                        <label for="id16">
+                                            <span class="name">Terrain</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <input style="width: 46.5%;" class="pers" type="text" placeholder="NomProjet" name="nomProjet" formControlName="nomProjet">
+                            <div *ngIf="Form.value.typologie=== 'Appartement'" style="margin-bottom: 15px;">
+                                <p> 
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="number" placeholder="nombreChambres" name="NombreChambres"  formControlName="nombreChambres">
+                                    <input style="margin-left: 18px;" type="number" placeholder="Etage" name="etage" formControlName="etage">
+                                </p>
+                            </div>
+                            <div *ngIf="Form.value.typologie=== 'Villa'" style="margin-bottom: 15px;">
+                                <p> 
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="number" placeholder="nombreChambres" name="NombreChambres"  formControlName="nombreChambres">
+                                    <input style="margin-left: 18px;" type="number" placeholder="surfaceJardin" name="surfaceJardin" formControlName="surfaceJardin">
+                                </p>
+                            </div>
+                            <div *ngIf="Form.value.typologie=== 'Maison'" style="margin-bottom: 15px;">
+                                <p> 
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="number" placeholder="nombrePieces" name="NombrePieces"  formControlName="nombrePieces">
+                                    <label class="checkbox" style="font-size: 15px; margin-left: 21px;"><input type="checkbox" name="jardin" formControlName="jardin"> Jardin</label>
+                                </p>
+                            </div>
+                            <div *ngIf="Form.value.typologie=== 'Parking'" style="margin-bottom: 15px;">
+                                <p> 
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="number" placeholder="nombrePlaces" name="NombrePlaces"  formControlName="nombrePlaces">
+                                    <label class="checkbox" style="font-size: 15px; margin-left: 21px;"><input type="checkbox" name="couvert" formControlName="couvert"> Couvert</label>
+                                </p>
+                            </div>
+                            <div *ngIf="Form.value.typologie=== 'Ferme'" style="margin-bottom: 15px;">
+                                <p>  
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="number" placeholder="NombreAnimaux" name="NombreAnimaux"  formControlName="NombreAnimaux">
+                                    <input style="margin-left: 18px;" type="text" placeholder="typeCulture" name="typeCulture" formControlName="typeCulture">
+                                </p>
+                            </div>
+                            <div *ngIf="Form.value.typologie=== 'Terrain'" style="margin-bottom: 15px;">
+                                <p> 
+                                    <label class="checkbox" style="font-size: 14px;"><input type="checkbox" name="libre" formControlName="libre"> Libre</label>
+                                    <input style="margin-left: 8px;" type="number" placeholder="AnneeConstruction" name="anneeConstruction" formControlName="anneeConstruction">
+                                    <input style="margin-left: 18px;" type="text" placeholder="typeTerrain" name="typeTerrain" formControlName="typeTerrain">
+                                    <label class="checkbox" style="font-size: 15px; margin-left: 21px;"><input type="checkbox" name="constructible" formControlName="constructible"> Constructible</label>
+                                </p>
+                            </div> 
+                            <div style="display: flex; margin-bottom: 15px;">
+                                <input type="text" placeholder="Localisation" name="localisation" formControlName="localisation">
+                                <div class="file-input-container">
+                                    <input type="file" id="file" multiple (change)="selectImage($event)">
+                                    <label for="file">Image(s)</label>
+                                </div>
+                            </div>
+                            <p><textarea name="description" cols="30" rows="10" placeholder="Description" formControlName="description"></textarea></p>
+                            <input type="submit" value="Envoyer">
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

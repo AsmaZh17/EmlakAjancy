@@ -1,0 +1,80 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.single-product-content th,.single-product-content td {
+    border-bottom: 1px solid #9d4a2f;
+    text-align: left;
+    padding: 8px;
+    font-size: 15px;
+}
+.single-product-content td{
+    padding-right: 250px;
+    padding-left: 250px;
+}
+.back a{
+    background-color: #D2B48C;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: #000;
+    border-bottom: -20px;
+}
+.back a:hover{
+    color: #fff;
+}
+.contact-from-section .col-lg-8 {
+    margin-left: -70px;
+}
+.col-lg-5 {
+    max-width: 450px;
+}
+input[type=submit]:hover{
+    color: #fff;
+}
+.class a{
+    color: #9d4a2f;
+    border-radius: 20px;
+    border: 1px solid #9d4a2f;
+    background-color: transparent;
+    margin-bottom: -20px;
+    padding: 5px 130px;
+}
+.class i {
+    position: relative;
+    right: 100px;
+    transform: rotate(100deg);
+}
+.class a:hover{
+    background-color: #9d4a2f;
+    color: #fff;
+}
+iframe {
+    background-color: #FFF8DC;
+    border-radius: 25px;
+    height: 1000px;
+    background-size: cover;
+    background-position: center;
+}
+p a:hover{
+    text-decoration: underline;
+}
+i {
+    margin-right: 8px;
+}
+.taille {
+    width: 80px;
+    margin-right: 5px;
+    border: 1px solid #9d4a2f;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.taille2 {
+    margin-bottom: 5px;
+    margin-top: -10px;
+}

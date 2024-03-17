@@ -1,0 +1,123 @@
+hr{
+  color: #9d4a2f;
+  width: 320px;
+}
+.dropdown {
+  width: 120px;
+  height: fit-content;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.search input {
+  padding: 20px;
+  width: 30%;
+  background-color: transparent;
+  border: 3px solid #9d4a2f;
+  border-radius: 50px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: -80px;
+  color: #000;
+}
+.search input:focus {
+  border: 3px solid #9d4a2f;
+  border-radius: 50px;
+}
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+.input-box{
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  outline: 2px solid #9d4a2f;
+  border-radius: 25px;
+  padding: 8px 20px;
+  font-family: poppins;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.input-box::before {
+  content: url("../../../assets/img/chevron-en-bas.png"); 
+  height: 50px;
+  position: absolute;
+  font-size: 18px;
+  top: 55%;
+  right: 15px;
+  transform: translate(0 , -50%);
+  width: fit-content;
+  height: fit-content;
+}
+.input-box.open::before {
+  content: url("../../../assets/img/chevron-en-haut.png");
+}  
+.input-box:empty::after {
+  content: "filtre par: ";
+  color: rgba(0, 0, 0, 0.5);
+}
+.list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  margin-top: 10px;
+  border-radius: 2mm;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 0;
+  transition: 0.25s ease-out;
+}
+.list input {
+  display: none;
+}
+.list label {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  font-family: poppins;
+  font-size: 14px;
+  box-sizing: border-box; 
+  position: relative;
+}
+.list label:hover{
+  background: rgba(0, 0, 0, 0.08);
+}
+input:checked + label {
+  color: #9d4a2f;
+  background-color: #D2B48C ;
+}
+input:checked + label::before {
+  content: url("../../../assets/img/verifie.png");
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0,-50%);
+  font-size: 18px;
+}
+.open {
+  outline: 0.7mm solid #D2B48C;
+}
+ul li a {
+  color: #9d4a2f;
+}
+ul li a i {
+  transform: rotate(90deg);
+}
+ul li a:hover {
+  color: #D2B48C;
+}

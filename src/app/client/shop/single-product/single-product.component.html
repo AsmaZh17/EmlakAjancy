@@ -1,0 +1,135 @@
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>See more Details</p>
+                    <h1>Single Product</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+
+<div class="contact-from-section mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-3 contact-form-image" [style.background-image]="produit?.urlimage ? 'url(' + produit.urlimage[currentImageIndex] + ')' : 'none'"
+                (click)="changeImage()">
+                </div>
+                <div style="margin-bottom: -12px;">
+                    <div class="product-form-wrap">
+                        <div class="single-product-content">
+                            <h4>{{produit?.nomProjet}}</h4>
+                            <p class="margin" >{{produit?.adresse}}</p> 
+                            <div class="text">
+                                <input *ngIf="produit?.etat === 'Vente'" class="button" type="button" [value]="produit?.prix + ' DT'">
+                                <input *ngIf="produit?.etat === 'Location'" class="button" type="button" [value]="produit?.prix + ' DT / mois'"><br>
+                                <span *ngIf="produit?.categorie === 'Appartement' || produit?.categorie === 'Villa' && produit?.nombreChambres != 0"><i class="fas fa-bed"></i>{{produit?.nombreChambres}} chambre</span>
+                                <span class="between"><i class="fas fa-ruler"></i>{{produit?.surface}} m<sup>2</sup></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="mb-3">
+                    <div class="product-form-wrap">
+                        <div class="col-md-7" >
+                            <div class="single-product-content">
+                                <h5><i class="marron-text far fa-folder-open"></i>Description</h5>
+                                <p>{{produit?.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-form-wrap mb-3">
+                    <div class="col-md-7" >
+                        <div class="single-product-content">
+                            <h5><i class="marron-text far fa-file-alt"></i>Caractéristique</h5>
+                            <table>
+                                <tr> 
+                                    <th>REF:</th>
+                                    <td>{{produit?.ref}}</td>
+                                </tr>
+                                <tr *ngIf="produit?.etage != null">
+                                    <th>Etage:</th>
+                                    <td>{{produit?.etage}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Libre:</th>
+                                    <td>{{produit?.libre}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Catégorie:</th>
+                                    <td>{{produit?.categorie}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Construction:</th>
+                                    <td>{{produit?.anneeConstruction}}</td>
+                                </tr>
+                            </table> 
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe [src]="sanitizeUrl(produit?.localisation)" class="embed-responsive-item"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="mb-3 contact-form-wrap">
+                    <div class="text-center">
+                        <h4 class="marron-text">Nous contactez</h4>
+                        <div class="contact-form2">
+                            <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                                <input type="text" placeholder="Nom" name="name" formControlName="name">
+                                <input type="email" placeholder="Email" name="email" formControlName="email">
+                                <input type="tel" placeholder="Téléphone" name="phone" formControlName="phone">
+                                <input type="text" placeholder="Sujet" name="subject" formControlName="subject">
+                                <textarea name="message" cols="30" rows="10" placeholder="Message" formControlName="message"></textarea>
+                                <div class="bord"><input type="submit" value="Envoyer"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+                <div *ngIf="produit?.etat === 'Vente'" class="mb-3 contact-form-wrap">
+                    <h4 style="font-size: 15px;">Frais</h4>
+                    <table>
+                        <tr>
+                            <td><i class="fas fa-home"></i>Prix:</td>
+                            <th>{{produit?.prix}} DT</th>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-calculator"></i>Echéance crédit:</td>
+                            <th> {{produit?.prix / 12 | number:'1.2-2'}} / mois </th>
+                        </tr>
+                    </table><br>
+                    <div class="back">
+                        <a><i class="fas fa-calculator"></i>Calculer l'échéancier</a>
+                    </div>
+                </div>
+                <div *ngIf="produit?.etat === 'Location'" class="mb-3 contact-form-wrap">
+                    <h4 style="font-size: 15px;">Frais</h4>
+                    <table>
+                        <tr>
+                            <td><i class="fas fa-home"></i>Prix:</td>
+                            <th>{{produit?.prix}} DT / mois</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="contact-form-wrap">	
+                    <h4 class="marron-text" style="margin-top: -20px; font-size: 15px;">Propriété proposée par:</h4>
+                    <p class="taille2"><img class="taille" src="../../../../assets/img/emlak-bg.png"><span class="marron-text">Affilié:</span> {{Proprietaire?.nom}} {{Proprietaire?.prenom}}</p>
+                    <p><i class="marron-text fas fa-map-marker-alt"></i>{{Proprietaire?.adresse}}</p>
+                    <p><i class="marron-text far fa-envelope"></i><a [href]="'mailto:' + Proprietaire?.email" target="_blank">{{Proprietaire?.email}}</a></p>
+                    <p><i class="marron-text fab fa-whatsapp"></i><a [href]="'https://wa.me/'+ Proprietaire?.whatsapp" target="_blank">{{Proprietaire?.whatsapp}}</a></p>
+                    <p><i class="marron-text fab fa-facebook"></i><a [href]="'https://www.facebook.com/' + Proprietaire?.facebook" target="_blank">Fecebook</a></p>
+                    <div class="text-center class"><a><i class="fas fa-phone"></i>Telephone</a></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div><div><br></div>

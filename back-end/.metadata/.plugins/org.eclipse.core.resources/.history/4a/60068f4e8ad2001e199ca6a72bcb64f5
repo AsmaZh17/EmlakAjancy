@@ -1,0 +1,292 @@
+package Residence.spring.Controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import Residence.spring.entities.*;
+import Residence.spring.Service.ResidenceService;
+
+@CrossOrigin(origins = "*")
+@RestController
+public class ResidenceController {
+
+	@Autowired
+	private ResidenceService Service;
+
+	@PostMapping("/proprietaire")
+	public Proprietaire addProprietaire(@RequestBody Proprietaire p) {
+		return this.Service.addProprietaire(p);
+	}
+	@GetMapping("/user")
+	public ArrayList<User> getUsers() {
+		return this.Service.getUsers();
+	}
+	@GetMapping("/user/{id}")
+	public User getuser(@PathVariable int id) {
+		return this.Service.getUser(id);
+	}
+	@GetMapping("/user/check-email/{email}")
+	public User getuserByEmail(@PathVariable String email) {
+		return this.Service.getUserByEmail(email);
+	}
+	@PostMapping("/user")
+	public User addUser(@RequestBody User user) {
+		return this.Service.addUser(user);
+	}
+	@DeleteMapping("/user/{id}")
+	public void deleteUser(@PathVariable int id) {
+		this.Service.deleteUser(id);
+	}
+	@PutMapping("/user/{id}")
+	public void updateUser(@RequestBody User u ,@PathVariable int id) {
+		this.Service.updateUser(u, id);
+	}
+	@GetMapping("/avantages")
+	public ArrayList<AvantagesImmobilier> getAvantages() {
+		return this.Service.getAvantages();
+	}
+	@PostMapping("/avantages")
+	public void addAvantage(@RequestBody AvantagesImmobilier a) {
+		this.Service.addAvantage(a);
+	}
+	@GetMapping("/all")
+	public ArrayList<Typologie> getAlls() {
+		return this.Service.getAll();
+	}
+	@GetMapping("/all/{id}")
+	public Typologie getAll(@PathVariable int id) {
+		return this.Service.get(id);
+	}
+	@PostMapping("/appartement")
+	public void addAppartement(@RequestBody Appartement a) {
+		this.Service.addAppartement(a);
+	}
+	@PostMapping("/modelAppartement")
+	public void addModelAppartement(@RequestBody ModelAppartement a) {
+		this.Service.addModelAppartement(a);
+	}
+	@PostMapping("/villa")
+	public void addVilla(@RequestBody Villa villa) {
+		this.Service.addVilla(villa);
+	}
+	@PostMapping("/modelVilla")
+	public void addModelVilla(@RequestBody ModelVilla villa) {
+		this.Service.addModelVilla(villa);
+	}
+	@PostMapping("/ferme")
+	public void addFerme(@RequestBody Ferme ferme) {
+		this.Service.addFerme(ferme);
+	}
+	@PostMapping("/modelFerme")
+	public void addModelFerme(@RequestBody ModelFerme ferme) {
+		this.Service.addModelFerme(ferme);
+	}
+	@PostMapping("/maison")
+	public void addMaison(@RequestBody Maison maison) {
+		this.Service.addMaison(maison);
+	}
+	@PostMapping("/modelMaison")
+	public void addModelMaison(@RequestBody ModelMaison maison) {
+		this.Service.addModelMaison(maison);
+	}
+	@PostMapping("/parking")
+	public void addParking(@RequestBody Parking parking) {
+		this.Service.addParking(parking);
+	}
+	@PostMapping("/modelParking")
+	public void addModelParking(@RequestBody ModelParking parking) {
+		this.Service.addModelParking(parking);
+	}
+	@PostMapping("/terrain")
+	public void addTerrain(@RequestBody Terrain terrain) {
+		this.Service.addTerrain(terrain);
+	}
+	@PostMapping("/modelTerrain")
+	public void addModelTerrain(@RequestBody ModelTerrain terrain) {
+		this.Service.addModelTerrain(terrain);
+	}
+	@GetMapping("/model")
+	public ArrayList<Typologie> getModel() {
+		return this.Service.getModel();
+	}
+	@GetMapping("/appartement")
+	public ArrayList<Appartement> getAppartements() {
+		return this.Service.getAppartement();
+	}
+	@GetMapping("/modelAppartement")
+	public ArrayList<ModelAppartement> getModelAppartement() {
+		return this.Service.getModelAppartement();
+	}
+	@GetMapping("/villa")
+	public ArrayList<Villa> getVillas() {
+		return this.Service.getVilla();
+	}
+	@GetMapping("/modelVilla")
+	public ArrayList<ModelVilla> getModelVillas() {
+		return this.Service.getModelVilla();
+	}
+	@GetMapping("/ferme")
+	public ArrayList<Ferme> getFermes() {
+		return this.Service.getFerme();
+	}
+	@GetMapping("/modelFerme")
+	public ArrayList<ModelFerme> getModelFermes() {
+		return this.Service.getModelFerme();
+	}
+	@GetMapping("/maison")
+	public ArrayList<Maison> getMaisons() {
+		return this.Service.getMaison();
+	}
+	@GetMapping("/modelMaison")
+	public ArrayList<ModelMaison> getModelMaisons() {
+		return this.Service.getModelMaison();
+	}
+	@GetMapping("/parking")
+	public ArrayList<Parking> getParkings() {
+		return this.Service.getParking();
+	}
+	@GetMapping("/modelParking")
+	public ArrayList<ModelParking> getModelParkings() {
+		return this.Service.getModelParking();
+	}
+	@GetMapping("/terrain")
+	public ArrayList<Terrain> getTerrains() {
+		return this.Service.getTerrain();
+	}
+	@GetMapping("/modelTerrain")
+	public ArrayList<ModelTerrain> getModelTerrains() {
+		return this.Service.getModelTerrain();
+	}
+	@GetMapping("/appartement/{id}")
+	public Appartement getAppartement(@PathVariable int id) {
+		return (Appartement) this.Service.get(id);
+	}
+	@GetMapping("/villa/{id}")
+	public Villa getVilla(@PathVariable int id) {
+		return (Villa) this.Service.get(id);
+	}
+	@GetMapping("/ferme/{id}")
+	public Ferme getFerme(@PathVariable int id) {
+		return (Ferme) this.Service.get(id);
+	}
+	@GetMapping("/maison/{id}")
+	public Maison getMaison(@PathVariable int id) {
+		return (Maison) this.Service.get(id);
+	}
+	@GetMapping("/parking/{id}")
+	public Parking getParking(@PathVariable int id) {
+		return (Parking) this.Service.get(id);
+	}
+	@GetMapping("/terrain/{id}")
+	public Terrain getTerrain(@PathVariable int id) {
+		return (Terrain) this.Service.get(id);
+	}
+	@GetMapping("/modelAppartement/{id}")
+	public ModelAppartement getmodelAppartement(@PathVariable int id) {
+		return (ModelAppartement) this.Service.get(id);
+	}
+	@GetMapping("/modelVilla/{id}")
+	public ModelVilla getmodelVilla(@PathVariable int id) {
+		return (ModelVilla) this.Service.get(id);
+	}
+	@GetMapping("/modelFerme/{id}")
+	public ModelFerme getmodelFerme(@PathVariable int id) {
+		return (ModelFerme) this.Service.get(id);
+	}
+	@GetMapping("/modelMaison/{id}")
+	public ModelMaison getmodelMaison(@PathVariable int id) {
+		return (ModelMaison) this.Service.get(id);
+	}
+	@GetMapping("/modelParking/{id}")
+	public ModelParking getmodelParking(@PathVariable int id) {
+		return (ModelParking) this.Service.get(id);
+	}
+	@GetMapping("/modelTerrain/{id}")
+	public ModelTerrain getmodelTerrain(@PathVariable int id) {
+		return (ModelTerrain) this.Service.get(id);
+	}
+	@DeleteMapping("/model/{id}")
+	public void deleteModel(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/appartement/{id}")
+	public void deleteAppartements(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelAppartement/{id}")
+	public void deleteModelAppartement(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/villa/{id}")
+	public void deleteVilla(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelVilla/{id}")
+	public void deleteModelVilla(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/ferme/{id}")
+	public void deleteFerme(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelFerme/{id}")
+	public void deleteModelFerme(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/maison/{id}")
+	public void deleteMaison(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelMaison/{id}")
+	public void deleteModelMaison(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/parking/{id}")
+	public void deleteParking(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelParking/{id}")
+	public void deleteModelParking(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/terrain/{id}")
+	public void deleteTerrain(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@DeleteMapping("/modelTerrain/{id}")
+	public void deleteModelTerrain(@PathVariable int id) {
+		this.Service.delete(id);
+	}
+	@PutMapping("/appartement/{id}")
+	public void updateAppartement(@RequestBody Appartement maison ,@PathVariable int id) {
+		this.Service.updateAppartement(maison, id);
+	}
+	@PutMapping("/villa/{id}")
+	public void updateVilla(@RequestBody Villa maison ,@PathVariable int id) {
+		this.Service.updateVilla(maison, id);
+	}
+	@PutMapping("/ferme/{id}")
+	public void updateFerme(@RequestBody Ferme maison ,@PathVariable int id) {
+		this.Service.updateFerme(maison, id);
+	}
+	@PutMapping("/maison/{id}")
+	public void updateMaison(@RequestBody Maison maison ,@PathVariable int id) {
+		this.Service.updateMaison(maison, id);
+	}
+	@PutMapping("/parking/{id}")
+	public void updateParking(@RequestBody Parking maison ,@PathVariable int id) {
+		this.Service.updateParking(maison, id);
+	}
+	@PutMapping("/terrain/{id}")
+	public void updateTerrain(@RequestBody Terrain maison ,@PathVariable int id) {
+		this.Service.updateTerrain(maison, id);
+	}
+	@PutMapping("/hidden/{id}")
+	public void updateHidden(@PathVariable int id) {
+		this.Service.updateHidden(id);
+	}
+}
+
+

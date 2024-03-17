@@ -1,0 +1,230 @@
+*{
+	font-family: 'Poppins', sans-serif;
+}
+.all{ 
+	height: 85vh;
+	width: 100%; 
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 12%;
+}
+.container{
+	width: 100%;
+	max-width: 700px;
+	padding: 10px 0px 20px 0px;
+	border: 2px solid #D2B48C;
+	border-radius: 16px;
+}
+.container h1{
+	text-align: left;
+	color: #9d4a2f;
+	font-size: 2.5rem;
+	font-weight: 600;
+	padding: 0 0 15px 0;
+	margin-bottom: -15px;
+}
+.container section{
+	padding: 0 50px;
+}
+section .main{
+	display: flex;
+	position: relative;
+	margin: 20px 0;
+}
+section .main1{
+	width: 50%;
+	border-bottom: 2px solid #D2B48C;
+}
+section .main2{
+	width: 50%;
+	margin-left: 50px;
+	border-bottom: 2px solid #D2B48C;
+}
+section .main3{
+	width: 45.5%;
+	position: absolute;
+	bottom: 20px;
+	left: 325px;
+	border-bottom: 2px solid #D2B48C;
+}
+section .main4{
+	width: 100%;
+	border-bottom: 2px solid #D2B48C;
+}
+section .main5{
+	width: 28%;
+	border-bottom: 2px solid #D2B48C;
+	position: relative;
+	top: -102px;
+	left: 430px;
+	margin-bottom: -50px;
+}
+section .radio{
+	position: relative;
+	margin: 20px 0;
+	border-bottom: 2px solid #D2B48C;
+}
+section .radio1{
+	width: 40%;
+	position: relative;
+	margin: 20px 0;
+	border-bottom: 2px solid #D2B48C;
+}
+section .radio2{
+	width: 25.5%;
+	position: relative;
+	top: -82px;
+	left: 260px;
+	margin: 20px 0;
+	border-bottom: 2px solid #D2B48C;
+	margin-bottom: -50px;
+}
+
+.main input{
+	width: 100%;
+	padding: 0 5px;
+	font-size: 1rem;
+	height: 40px;
+	border: none;
+	outline: none;
+	background: none;
+	color: #D2B48C;
+}
+.radio {
+	color: #D2B48C;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+.radio1{
+	color: #D2B48C;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+.radio2 {
+	color: #D2B48C;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-left: 300px;
+}
+.radio label , .radio1 label , .radio2 label{
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	top: 10px;
+	color: #9d4a2f;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+}
+.main label{
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	color: #D2B48C;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+	pointer-events: none;
+	transition: all .40s ease;
+}
+.main1 label{
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	color: #D2B48C;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+	pointer-events: none;
+	transition: all .40s ease;
+}
+.main2 label{
+	position: absolute;
+	top: 50%;
+	left: 55%;
+	color: #D2B48C;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+	pointer-events: none;
+	transition: all .40s ease;
+}
+.main input:focus ~ label,
+.main input:valid ~ label{
+  top: -3px;
+  color: #9d4a2f;
+}
+input[type="submit"]{
+	height: 45px;
+	width: 100%;
+	border: none;
+	background: #D2B48C;
+	color: #fff;
+	font-size: 1.1rem;
+	border-radius: 16px;
+	cursor: pointer;
+}
+a:hover {
+	color: #D2B48C;
+    text-decoration: none;
+}
+.custom-file-upload {
+  display: inline-block; 
+  position: relative;
+  overflow: hidden;
+  margin-left: 20px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #D2B48C;
+  padding: 6px 12px;
+  border-radius: 4px;
+  padding-bottom: 0px;
+  cursor: pointer;
+}
+
+.custom-file-label {
+  display: inline-block;
+  color: #D2B48C;
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.autre{
+	width: 45.5%;
+	border-bottom: 2px solid #D2B48C;
+}
+.file{
+	color: #9d4a2f;
+	transform: translateY(-50%);
+	font-size: 1.1rem;
+}
+input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: 2px solid #D2B48C;	
+	cursor: pointer;
+	margin-right: 3px;
+	margin-left: 10px;
+}
+  
+  input[type="radio"]:checked {
+	background-color: #D2B48C; 
+  }
+label input[type="radio"] {
+	margin-left: 15px;
+}
+.pos{
+	position: relative;
+	top: 8px;
+	margin-bottom: -30px;
+}

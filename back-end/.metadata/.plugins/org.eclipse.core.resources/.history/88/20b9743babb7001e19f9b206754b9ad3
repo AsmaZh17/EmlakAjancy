@@ -1,0 +1,48 @@
+package Residence.spring.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import Residence.spring.entities.*;
+import Residence.spring.Repository.ResidenceRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+@Service
+public class ResidenceService {
+	
+	@Autowired
+	private ResidenceRepository Repository;
+	
+    public List<Residence> getMaisons() {
+    	ArrayList<Residence> maisons = new ArrayList<>();
+    	Repository.findAll().forEach(maison -> {
+    		maisons.add(maison);
+    	});
+    	
+        return maisons;
+    }
+
+    public Residence getMaison(int id) {
+        return Repository.findById(id).orElse(null);
+    }
+
+    public void deleteMaison(int id) {
+    	Repository.deleteById(id);
+    }
+
+	public void addMaison(Residence maison) {
+		Repository.save(maison);
+	}
+
+	public void updateMaison(Residence maison, int id) {
+		Residence ResidenceToUpdate = Repository.findById(id).get();
+		ResidenceToUpdate.setAdresse(maison.getAdresse());
+		ResidenceToUpdate.setEtage(maison.getEtage());
+		ResidenceToUpdate.setNomProjet(maison.getNomProjet());
+		ResidenceToUpdate.setNum(maison.getNum());
+		ResidenceToUpdate.setPrix(maison.getPrix());
+		ResidenceToUpdate.setSurface(maison.getSurface());
+	}
+}
+

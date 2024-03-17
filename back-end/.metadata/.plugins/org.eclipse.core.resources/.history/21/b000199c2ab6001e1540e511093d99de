@@ -1,0 +1,46 @@
+package io.spring.VotreResidence.Controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.spring.VotreResidence.Model.Maison;
+import io.spring.VotreResidence.Service.ResidenceService;
+
+@RestController
+public class ResidenceController {
+
+	private ResidenceService Service;
+	
+	public ResidenceController(ResidenceService s) {
+		this.Service = s;
+	}
+	
+	@GetMapping("/maison/{id}")
+	public Maison getMaison(@PathVariable int id) {
+		return this.Service.getMaison(id);
+	}
+	
+	@GetMapping("/maisons")
+	public List<Maison> getMaisons() {
+		return this.Service.getMaisons();
+	}
+	@DeleteMapping("/maison/{id}")
+	public void deleteMaison(@PathVariable int id) {
+		this.Service.deleteMaison(id);
+	}
+	@PostMapping("/maisons")
+	public void addMaison(@RequestBody Maison maison) {
+		this.Service.addMaison(maison);
+	}
+	@PutMapping("/maison/{id}")
+	public void updateMaison(@RequestBody Maison maison ,@PathVariable int id) {
+		this.Service.updateMaison(maison,id);
+	}
+}
